@@ -10,9 +10,9 @@ const dateField = document.querySelector("#date");
 const programBtn = document.querySelector("#create-program");
 const programList = document.querySelector("#program-list");
 
+const festival = new Festival();
 
-
-function createMovie () {
+const createMovie = () => {
   const titleValue = titleField.value;
   const lengthValue = lengthField.value;
   const genreValue = genreOption.value;
@@ -29,8 +29,11 @@ function createMovie () {
 
 movieBtn.addEventListener("click", createMovie);
 
+festival.addMovie(movie);
+let ind = festival.listOfTotalMovies.length -1;
 
-function createProgram () {
+
+const createProgram = () => {
   const dateValue = new Date(dateField.value);
   const currentDate = new Date();
   currentDate.setHours(0, 0, 0, 0);
