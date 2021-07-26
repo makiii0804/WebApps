@@ -1,31 +1,54 @@
+class Festival {
+  constructor() {
+    this.listOfTotalMovies = [];
+    this.listOfTotalPrograms = [];
+  }
+  
+  addMovie(movie) {
+    this.listOfTotalMovies.push(movie);
+  }
+  addProgram(program) {
+    this.listOfTotalPrograms.push(program);
+  }
+}
+
+
 class Movie {
-    constructor(title, length, genre) {
-      this.title = title;
-      this.length = length;
-      this.genre = genre;
+  constructor(title, length, genre) {
+    this.title = title;
+    this.length = length;
+    this.genre = genre;
     }
-    genreShort() {
-      return (
-        this.genre.charAt().toUpperCase() +
-        this.genre.charAt(this.genre.length - 1).toUpperCase()
+  genreShort() {
+    return (
+      this.genre.charAt().toUpperCase() +
+      this.genre.charAt(this.genre.length - 1).toUpperCase()
       );
     }
-    getData() {
-      return this.title + ", " + this.length + "min, " + this.genreShort();
+  getData() {
+    return this.title + ", " + this.length + "min, " + this.genreShort();
     }
   }
   
-  class Program {
-    constructor(date) {
-      this.date = new Date(date);
+class Program {
+  constructor(date) {
+    this.date = new Date(date);
+    this.l
+    istOfMovies = [];
+    }
+  addMovie(movie) {
+    if (!movie || !(movie instanceof Movie)) {
+      alert("Invalid movie input!")
+    }
+    this.listOfMovies.push(movie);
     }
   
-    getData() {
-      this.day = this.date.getDate();
-      this.month = this.date.getMonth() + 1;
-      this.year = this.date.getFullYear();
-      return `${this.day}/${this.month}/${this.year}`;
+  getData() {
+    this.day = this.date.getDate();
+    this.month = this.date.getMonth() + 1;
+    this.year = this.date.getFullYear();
+    return `${this.day}/${this.month}/${this.year}`;
     }
   }
 
-  export {Movie, Program}
+export {Movie, Program}
