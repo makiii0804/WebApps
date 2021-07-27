@@ -33,8 +33,7 @@ class Movie {
 class Program {
   constructor(date) {
     this.date = new Date(date);
-    this.l
-    istOfMovies = [];
+    this.listOfMovies = [];
     }
   addMovie(movie) {
     if (!movie || !(movie instanceof Movie)) {
@@ -42,6 +41,17 @@ class Program {
     }
     this.listOfMovies.push(movie);
     }
+  countMovies() {
+    return this.listOfMovies.length;
+  }
+    
+  totalMovieLength() {
+    var count = 0;
+    this.totalMovieLength.forEach(function(element){
+      count+=element.length;
+    })
+    return count;
+  }
   
   getData() {
     this.day = this.date.getDate();
