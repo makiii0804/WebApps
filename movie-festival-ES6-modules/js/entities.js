@@ -52,13 +52,27 @@ class Program {
     })
     return count;
   }
+
+  getProgramDate() {
+    var day = this.date.getDate();
+    var month = this.date.getMonth() + 1;
+    var year = this.date.getFullYear();
+    var date = day + "/" + month + "/" + year;
+    return date;
+  }
   
   getData() {
-    this.day = this.date.getDate();
-    this.month = this.date.getMonth() + 1;
-    this.year = this.date.getFullYear();
-    return `${this.day}/${this.month}/${this.year}`;
+    var total = this.getProgramDate();
+    if(this.countMovies() === 0) {
+      total+= ", Program to be announced!";
+      return total;
     }
+    if(this.countMovies() === 1) {
+      return total+=", " + this.countMovies() + " movie, duration: " + this.totalMovieLength +"min";
+    }
+    total+=", " + this.countMovies() + " movies, duration: " + this.totalMovieLength +"min";
+    return total;
   }
+}
 
 export {Movie, Program}
