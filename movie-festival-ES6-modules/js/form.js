@@ -32,6 +32,10 @@ movieBtn.addEventListener("click", createMovie);
 festival.addMovie(movie);
 let ind = festival.listOfTotalMovies.length -1;
 
+let liElement = document.createElement("li");
+liElement.textContent = movie.getData();
+movieList.appendChild(liElement);
+
 
 const createProgram = () => {
   const dateValue = new Date(dateField.value);
