@@ -36,6 +36,11 @@ let liElement = document.createElement("li");
 liElement.textContent = movie.getData();
 movieList.appendChild(liElement);
 
+var option = document.createElement("option");
+option.textContent = movie.getData();
+option.setAttribute("value", ind);
+movieChoose.appendChild(option);
+
 
 const createProgram = () => {
   const dateValue = new Date(dateField.value);
