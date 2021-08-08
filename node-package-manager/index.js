@@ -1,4 +1,9 @@
 let figlet = require("figlet");
+let funnyWords = require("funny-words");
+
+
+console.log(funnyWords("Don't worry, be happy!"));
+
 
 console.log(
   figlet.textSync("Hello World!", {
