@@ -1,13 +1,17 @@
-import React from 'react';
+import React from "react"
 
-import './Header.css'
+import "./Header.css"
 
-const Header = () => (
-    <nav className="navbar header">
-        <div className="container-fluid">
-            <span className="navbar-brand mb-0 h1 text-center">React Users</span>
+const Header = ({isListView, onLayoutChange }) => {
+    console.log('Header: ', isListView);
+    return (
+        <div className="header">
+                <p>React Users</p>
+                <button onClick={onLayoutChange}>{isListView ? 'Grid View' : 'List View'}</button>
+                
         </div>
-    </nav>
-)
+        
+    )
+}
 
 export { Header };
