@@ -1,6 +1,7 @@
 import React from "react";
 import "../User/User"
 import "../../data/random-user"
+import { hideEmail, showBirthDate } from "../../functions/functions"
 
 import "./GridCard.css"
 
@@ -13,8 +14,8 @@ const GridCard = (props) => {
                 <h4>{props.userData.name.first}</h4>
             </div>
             <div className="data-container">
-                <p>Name: {props.userData.email}</p>
-                <p>Date of birth: {props.userData.dob.date}</p>
+                <p>Name: {hideEmail(props.userData.email)}</p>
+                <p>Date of birth: {showBirthDate(props.userData.dob.date)}</p>
             </div>
         </div>
 
