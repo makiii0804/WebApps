@@ -16,6 +16,14 @@ export const BlogList = () => {
         });
     },[])
 
+    const onRefresh = () => {
+        getBlogs().then((blogs) => {
+            setBlogs(blogs);
+            setFilteredBlogs(blogs)
+            setInputValue("")
+        })
+    }
+
     const onTyping = (e) => {
         setInputValue (e.target.value)
         const fBlogs = blogs.filter(blog => blog.title.includes(inputValue))
@@ -26,6 +34,7 @@ export const BlogList = () => {
     return (
         <div className='blogList'>
             <input value = {inputValue} type="text" onChange = {onTyping}/>
+            <button onClick={onRefresh}>Refresh page</button>
             {filteredBlogs.map((post, index) => (
                <div className='blogItem' key={index}>
                    <h2>{post.title}</h2>
@@ -36,12 +45,6 @@ export const BlogList = () => {
         </div>
     ); 
 }
-
-
-
-
-
-
 
 
 // export class BlogList extends Component {
