@@ -29,9 +29,15 @@ export const UserList = (props) => {
     }
 
     const onTyping = (e) => {
-        setInputValue (e.target.value)
-        const fUsers = filteredUsers.filter(user => user.name.first.includes(inputValue))
-        setfilteredUsers(fUsers)
+        if (e.target.value === "") {
+            const fUsers = users;
+            setfilteredUsers(fUsers);
+            setInputValue("");
+        } else {
+            setInputValue (e.target.value)
+            const fUsers = users.filter(user => user.name.first.includes(inputValue))
+            setfilteredUsers(fUsers);
+        }
     }
 
     if (users.length === 0) return <div>  Loading....</div>
